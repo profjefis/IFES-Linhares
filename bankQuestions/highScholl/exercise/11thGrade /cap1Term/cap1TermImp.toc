@@ -1,7 +1,0 @@
-\babel@toc {brazil}{}
-\contentsline {section}{\numberline {1}Temperatura e Calor}{3}
-\contentsline {section}{\numberline {2}Escalas Termom\IeC {\'e}tricas}{3}
-\contentsline {section}{\numberline {3}Exerc\IeC {\'\i }cios Resolvidos}{4}
-\contentsline {section}{\numberline {4}Exerc\IeC {\'\i }cios Propostos}{6}
-\contentsline {section}{\numberline {5}Gabaritos}{6}
-\contentsline {section}{\numberline {6}Solu\IeC {\c c}\IeC {\~o}es}{6}

@@ -1,0 +1,183 @@
+% https://tex.stackexchange.com/q/224408/
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=3cm]{geometry}
+%\usepackage[papersize={6.67in,3.75in},margin=1.5cm]{geometry}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{xsim}
+\usepackage{setspace}
+\usepackage{xcolor}
+
+\newcommand{\content}{Termometria}
+\usepackage{fancyhdr}
+
+\newcommand{\aspas}[1]{``#1''}
+
+\lhead{\content}
+\cfoot{}
+\rfoot{\thepage}
+
+\author{J. R. Oliveira}
+\date{\today}
+\title{\content}
+
+\DeclareExerciseTranslation{Brazil}{exercise}{Exercício}
+\DeclareExerciseTranslation{Brazil}{solution}{Solução}
+
+\DeclareExerciseTagging{difficulty}
+\DeclareExerciseTagging{type}
+\DeclareExerciseTagging{typequestion}
+\DeclareExerciseTagging{author}
+
+\usepackage{needspace}
+
+\DeclareExerciseProperty{shortsolution}
+
+% we'll use a description list for the shortsolutions:
+\newcommand\printshortsolutions{%
+    \ForEachUsedExerciseByType{%
+      \def\ExerciseType{##1}%
+      \def\ExerciseID{##2}%
+      \GetExercisePropertyT{shortsolution}
+        {%
+          \par\noindent\textbf{##3}.
+           ####1%
+        }%
+    }%  
+}
+
+\usepackage{environ,etoolbox}
+\NewEnviron{shortsolution}{\SetExpandedExerciseProperty{shortsolution}{\expandonce{\BODY}}}
+
+\newcommand*\includeQuestion[1]{%
+\XSIMexpandcode{\printexercise{exercise}{\GetExerciseIdForProperty{ID}{#1}}}%
+}
+
+\newcommand*\includeSolution[1]{%
+\XSIMexpandcode{\printsolution{exercise}{\GetExerciseIdForProperty{ID}{#1}}}%
+}
+
+\DeclareExerciseEnvironmentTemplate{simpleExercise}
+  {\par\noindent\textbf{\GetExerciseProperty{counter}}.~}
+  {\par\smallskip}
+  
+\DeclareExerciseEnvironmentTemplate{simpleSolution}
+{\par\noindent\textbf{\GetExerciseName~\GetExerciseProperty{counter}}:\newline}
+{\par\smallskip}
+
+\xsimsetup{exercise/template=simpleExercise,
+           solution/template=simpleSolution
+}
+\DeclareExerciseCollection{termER}
+\DeclareExerciseCollection{termEasyER}
+\DeclareExerciseCollection{col:cap1Term}
+
+% comment/uncomment to print solutions
+%\renewcommand*\includeSolution[1]{}
+
+\begin{document}
+
+\onehalfspacing
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+%\pagestyle{fancy}
+
+
+%\section*{Questões}
+%\includeQuestion{Q001}
+%\includeQuestion{Q002}
+%\includeQuestion{Q003}
+
+%\section*{Soluções}
+%\includeSolution{Q001}
+%\includeSolution{Q002}
+%\includeSolution{Q003}
+
+%\section{Exercícios Aleatórios}
+\section{Temperatura e Calor}
+\begin{itemize}
+    \item Temperatura:
+    \begin{itemize}
+            \item Macroscópico: quantidade que informa quão quente ou frio está um objeto em relação a algum padrão;
+            \item Microscópico: grau de agitação térmica de moléculas.
+    \end{itemize}
+    \item Instrumento de medida: termômetro (analógico, digital, infravermelho...);
+    \item Sensação térmica: sensação de \aspas{mais quente} ou \aspas{mais frio};
+    \item Calor: energia transferida de uma coisa a outra por causa da diferença de temperatura;
+    \item Equilíbrio térmico: estado em que os corpos apresentam a mesma temperatura; 
+    \item Lei de Zero da Termodinâmica: \aspas{Se dois corpos A e B estão separadamente em equilíbrio térmico com um terceiro corpo C, então A e B estão em equilíbrio térmico entre si}. (Se $T_{a}=T_{c}$ e $T_{b}=T_{c}$, então $T_{a}=T_{b}$). 
+\end{itemize}
+
+\section{Escalas Termométricas}
+
+\begin{itemize}
+    \item Celsius: escala usada no Brasil e na maior parte dos países (conhecida como escala centígrada);
+    \item Fahrenheit: escalas mais utilizadas em países de língua inglesa;
+    \item Kelvin: escala mais utilizada meios científicos;
+    \item Relação entre as principais escalas: \[\dfrac{T_{C}}{5}=\dfrac{T_{F}-32}{9}=\dfrac{T_{K}-273}{5}\]
+    De forma mais simplificada:
+        \begin{equation}\label{eq:tctf}
+            \dfrac{T_{C}}{5}=\dfrac{T_{F}-32}{9}
+        \end{equation}
+        \begin{equation}\label{eq:tftk}
+            \dfrac{T_{F}-32}{9}=\dfrac{T_{K}-273}{5}
+        \end{equation}
+            \begin{equation}\label{eq:tctk}
+            T_{C}=T_{K}-273
+        \end{equation}
+        \item Variações: $\Delta T_{F}= 1,8\cdot\Delta T_{C}=1,8\cdot\Delta T_{K}$;
+    \item Escalas Arbitrárias: utiliza-se proporção simples.
+\end{itemize}
+
+\section{Exercícios Resolvidos}
+\collectexercises{termER}
+\xsimsetup{type=ER}
+\input{bqCap1Term.tex}
+\collectexercisesstop{termER}
+\includeQuestion{Q201001}
+\includeSolution{Q201001}
+\includeQuestion{Q201002}
+\includeSolution{Q201002}
+\includeQuestion{Q201003}
+\includeSolution{Q201003}
+\includeQuestion{Q201004}
+\includeSolution{Q201004}
+\includeQuestion{Q201005}
+\includeSolution{Q201005}
+\includeQuestion{Q201006}
+\includeSolution{Q201006}
+\section{Exercícios Propostos}
+
+\section{Gabaritos}
+
+\printshortsolutions
+
+\section{Soluções}
+\printsolutions*[headings=false,collection=termER]
+
+
+
+%\collectexercises{col:cap1Term}
+%\input{bqCap1TermStu.tex}
+%\collectexercisesstop{col:cap1Term}
+
+\end{document}
+
+%\section{Problemas}
+% set hint through option:
+
+%\section{Gabaritos}
+%\printgabs
+
+%\section{Soluções}
+%\printsolutions[headings=false]
+
+%\end{document}
